@@ -49,7 +49,7 @@ Copy code
 
 1. Clone the repo:  
    ```bash
-   git clone https://github.com/your-username/my-app.git
+   git clone https://github.com/tushti19-gh/Portfolio.git
    cd my-app
 Install dependencies:
 
@@ -80,7 +80,7 @@ My own notes for quick revision
 ⚡ README_DEV.md is for myself to revisit and quickly understand the codebase.
 
 📬 Contact
-LinkedIn: [Your LinkedIn Link]
+LinkedIn: (https://www.linkedin.com/in/tushtidua/)
 
-GitHub: [Your GitHub Link]
+GitHub: (https://github.com/tushti19-gh)
 
