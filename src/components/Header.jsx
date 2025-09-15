@@ -1,10 +1,14 @@
 import React from "react";
+import ProfilePic from "../assets/profilePic.png"
 
 function Header() {
   return (
     <header>
       <nav className="navbar">
-        <h1 className="logo">Tushti</h1>
+        <div className="logo-container">
+          <img src={ProfilePic} alt="Tushti" className="profile-pic" />
+          <h1 className="logo">Tushti</h1>
+        </div>
         <ul className="nav-links">
           <li>
             <a href="#home">Home</a>
@@ -21,7 +25,7 @@ function Header() {
           </li>
 
           <li>
-            <a href="#contatc">Contact</a>
+            <a href="#contact">Contact</a>
           </li>
         </ul>
       </nav>

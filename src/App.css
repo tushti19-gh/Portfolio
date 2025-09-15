@@ -1,8 +1,47 @@
+/* ==============================
+   Global Reset
+   ============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(-45deg, #0a0a0a, #111, #1a1a1a, #0a0a0a);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  color: white; /* default text color */
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ==============================
+   Floating Dots Background (entire site)
+   ============================== */
+body::before {
+  content: "";
+  position: fixed; /* cover whole viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,242,254,0.3) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: moveBackground 20s linear infinite;
+  z-index: -1; /* behind everything */
+}
+
+/* ==============================
+   Navbar
+   ============================== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 10%;
+  height: 90px;
+  padding: 0 20px;
   background-color: #111;
   color: white;
 }
@@ -12,6 +51,22 @@
   font-weight: bold;
 }
 
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+  border: 2px solid #00f2fe;
+}
+
+/* ==============================
+   Navbar Links
+   ============================== */
 .nav-links {
   display: flex;
   list-style: none;
@@ -22,29 +77,335 @@
   color: white;
   text-decoration: none;
   font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #00bcd4;
+  color: #00f2fe;
 }
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #00f2fe;
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ==============================
+   Home Section
+   ============================== */
 .home {
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #f0f8ff, #e0f7fa);
+  flex-direction: column;
+  padding: 20px;
   text-align: center;
 }
 
-.home h1 {
+/* 🔹 Typewriter effect */
+.typing {
   font-size: 2.5rem;
-  margin-bottom: 10px;
+  font-weight: bold;
+  color: #00f2fe;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+  border-right: 2px solid #00f2fe;
+  white-space: nowrap;
+  overflow: hidden;
+  width: fit-content; /* fixed typewriter width issue */
+  max-width: 45%; /* responsive */
+  animation: typing 3s steps(30, end) forwards, blink 1s step-end infinite;
+  margin: 0 auto;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
 .home p {
   font-size: 1.2rem;
   max-width: 600px;
+  margin: 20px auto 0;
+  color: #bbb;
+}
+
+/* ==============================
+   Skills Section
+   ============================== */
+.skills-section {
+  padding: 60px 20px;
+  text-align: center;
+ /* background: linear-gradient(135deg, #0a0a0a, #111, #1a1a1a);*/
+}
+
+.skills-section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #00f2fe;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+}
+
+/* ==============================
+   Container Layout
+   ============================== */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 30px;
+  max-width: 800px;
   margin: 0 auto;
-  color: #333;
+}
+
+/* ==============================
+   Skill Cards
+   ============================== */
+.skill-card {
+  background: linear-gradient(-45deg, #0a0a0a, #111, #1a1a1a, #0a0a0a);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 242, 254, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
+}
+
+/* Skill Icons */
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.skill-icon.html { color: #e44d26; }
+.skill-icon.css { color: #2965f1; }
+.skill-icon.js { color: #f0db4f; }
+.skill-icon.react { color: #61dafb; }
+
+.skill-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ddd;
+}
+
+/* ==============================
+   Resume Section
+   ============================== */
+.resume-section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.resume-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #00f2fe;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+}
+
+.resume-section iframe {
+  max-width: 900px;
+  width: 100%;
+  height: 600px;
+  margin: 0 auto 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+  background: #1a1a1a;
+}
+
+.resume-section .btn {
+  display: inline-flex;
+  gap: 10px;
+  align-content: center;
+  align-items: center;
+  padding: 12px 20px;
+  border-radius: 8px;
+  background: #00f2fe;
+  color: #111;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.resume-section .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.7);
+}
+
+/* ==============================
+   Contact Section
+   ============================== */
+.contact-section {
+  padding: 80px 20px;
+  text-align: center;
+  /* background: linear-gradient(135deg, #0a0a0a, #111, #1a1a1a);*/
+} 
+
+  
+.contact-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #00f2fe;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+}
+
+.contact-section p {
+  color: #bbb;
+  margin-bottom: 40px;
+}
+
+.contact-links {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.contact-links li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+  font-size: 1.1rem;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  color: #00f2fe;
+}
+
+.contact-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #00f2fe;
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.7);
+}
+
+/* Contact Form */
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  color: #fff;
+  background: #1a1a1a;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1px solid #00f2fe;
+  box-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
+}
+
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #00f2fe;
+  color: #111;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.7);
+}
+
+/* ==============================
+   Animations
+   ============================== */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes moveBackground {
+  from { background-position: 0 0; }
+  to { background-position: 100px 100px; }
+}
+
+
+/* ==============================
+   Responsive Mobile Adjustments
+   ============================== */
+@media (max-width: 768px) {
+  .home::before {
+    width: 90%;  /* shrink neon frame */
+    height: 180px;
+  }
+
+  .typing {
+    font-size: 2rem;
+    max-width: 80%;  /* typewriter fits mobile screen */
+  }
+
+  .home p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .matrix {
+    font-size: 10px; /* smaller binary for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .home::before {
+    height: 150px;
+  }
+
+  .typing {
+    font-size: 1.5rem;
+  }
+
+  .home p {
+    font-size: 0.9rem;
+  }
+
+  .matrix {
+    font-size: 8px; /* very small binary */
+  }
 }
