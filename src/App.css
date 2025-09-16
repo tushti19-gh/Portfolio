@@ -40,14 +40,14 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 90px;
+  height: 80px;
   padding: 0 20px;
   background-color: #111;
   color: white;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 
@@ -63,7 +63,16 @@ body::before {
   margin-right: 20px;
   border: 2px solid #00f2fe;
 }
+ 
 
+.profile-pic:hover {
+  box-shadow: 0 0 10px #00f2fe;
+}
+
+.profile-pic:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 5px #00f2fe;
+}
 /* ==============================
    Navbar Links
    ============================== */
@@ -123,8 +132,8 @@ body::before {
   white-space: nowrap;
   overflow: hidden;
   width: fit-content; /* fixed typewriter width issue */
-  max-width: 45%; /* responsive */
-  animation: typing 3s steps(30, end) forwards, blink 1s step-end infinite;
+  max-width: 60%; /* responsive */
+  animation: typing 5s steps(50, end) forwards, blink 3s step-end infinite;
   margin: 0 auto;
 }
 
@@ -164,9 +173,9 @@ body::before {
    Container Layout
    ============================== */
 .skills-container {
-  display: grid;
+  display:grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 30px;
+  gap: 90px;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -178,6 +187,7 @@ body::before {
   background: linear-gradient(-45deg, #0a0a0a, #111, #1a1a1a, #0a0a0a);
   background-size: 400% 400%;
   animation: gradientShift 15s ease infinite;
+ 
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0 4px 15px rgba(0, 242, 254, 0.2);

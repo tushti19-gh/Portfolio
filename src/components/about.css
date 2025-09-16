@@ -1,0 +1,67 @@
+/* ==============================
+   About Section
+   ============================== */
+.about {
+  padding: 80px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: left;
+  color: #ddd;
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  color: #00f2fe;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.about p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+/* Highlight strong elements in neon */
+.about strong {
+  color: #00f2fe;
+  text-shadow: 0 0 5px rgba(0, 242, 254, 0.7);
+}
+
+/* Optional: Add subtle card-like background for About section */
+.about {
+  background: rgba(10, 10, 10, 0.6);
+  border-radius: 12px;
+  padding: 60px 30px;
+  box-shadow: 0 4px 20px rgba(0, 242, 254, 0.2);
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 242, 254, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about h2 {
+    font-size: 2rem;
+  }
+
+  .about p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about h2 {
+    font-size: 1.7rem;
+  }
+
+  .about p {
+    font-size: 0.95rem;
+  }
+}

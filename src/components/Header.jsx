@@ -1,5 +1,5 @@
 import React from "react";
-import ProfilePic from "../assets/profilePic.png"
+import ProfilePic from "../assets/profilePic.png";
 
 function Header() {
   return (
@@ -14,14 +14,14 @@ function Header() {
             <a href="#home">Home</a>
           </li>
           <li>
+            <a href="#about">About/Resume</a>
+          </li>
+          <li>
             <a href="#skills">Skills</a>
           </li>
 
           <li>
             <a href="#projects">Projects</a>
-          </li>
-          <li>
-            <a href="#resume">Resume</a>
           </li>
 
           <li>

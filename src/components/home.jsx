@@ -1,5 +1,6 @@
 import React from 'react';
 import './home.css';
+import pfp from '../assets/intro-pic.jpg';
 
 
 export default function Home() {
@@ -14,24 +15,25 @@ export default function Home() {
         ))}
       </div>
 
-      {/* Vertical tech lines */}
-      <div className="tech-lines">
-        {[10, 30, 50, 70, 90].map((pos, i) => (
-          <div
-            key={i}
-            className="tech-line"
-            style={{ left: `${pos}%`, animationDuration: `${3 + i * 0.5}s` }}
-          ></div>
-        ))}
-      </div>
+     
 
       {/* Home content */}
       <div className="home-content">
+        <div className="home-left">
+          <img src={pfp} alt="pfp" className="profile-image" />
+        </div>
+        <div className="home-right">
         <h1 className="typing">Hi, I'm Tushti</h1>
         <p>
           I'm a passionate web developer skilled in HTML, CSS, JavaScript, and React.
           I love turning ideas into functional and visually appealing websites.
         </p>
+
+        <div className="btn-group">
+          <a href="/resume.pdf" download className='btn-primary'>Download Resume</a>
+          <a href="#contact" className='btn-outline'>Contact Me</a>
+        </div>
+      </div>
       </div>
     </section>
   );
