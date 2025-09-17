@@ -342,3 +342,70 @@ body::before {
     font-size: 8px; /* very small binary */
   }
 }
+/* ==============================
+   Responsive Mobile Adjustments
+   ============================== */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 8px 0;
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Home Section */
+  .typing {
+    font-size: 2rem;
+    max-width: 90%;
+  }
+
+  .home p {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Navbar */
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 0.95rem;
+  }
+
+  /* Home Section */
+  .typing {
+    font-size: 1.4rem;
+  }
+
+  .home p {
+    font-size: 0.85rem;
+    padding: 0 10px;
+  }
+}
