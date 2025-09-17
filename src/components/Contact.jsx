@@ -1,27 +1,27 @@
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
-// Importing icons
+// Icons
 import { MdEmail } from "react-icons/md";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import './contact.css';
 
 function Contact() {
   const form = useRef();
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
-        "service_8cqgy13", // 🔹 from EmailJS dashboard
-        "template_3xgpv8o", // 🔹 from EmailJS template
+        "service_8cqgy13", // from EmailJS
+        "template_3xgpv8o", // from EmailJS
         form.current,
-        "_5efXp0f76uVGr9d6" // 🔹 from EmailJS account
+        "_5efXp0f76uVGr9d6" // from EmailJS
       )
       .then(
         (result) => {
           console.log(result.text);
           alert("✅ Message sent successfully!");
-          form.current.reset(); // clear form after sending
+          form.current.reset();
         },
         (error) => {
           console.log(error.text);
@@ -33,9 +33,11 @@ function Contact() {
   return (
     <section id="contact" className="contact-section">
       <h2>Contact Me</h2>
-      <p>You can get in touch with me through my links or by sending me a message:</p>
+      <p className="contact-intro">
+        You can reach me via the links below or send a message directly:
+      </p>
 
-      {/* 🔹 Contact Links with Icons */}
+      {/* Contact Links */}
       <ul className="contact-links">
         <li>
           <MdEmail className="contact-icon" />
@@ -63,12 +65,12 @@ function Contact() {
         </li>
       </ul>
 
-      {/* 🔹 Contact Form */}
+      {/* Contact Form */}
       <form ref={form} onSubmit={sendEmail} className="contact-form">
         <input type="text" name="from_name" placeholder="Your Name" required />
         <input type="email" name="from_email" placeholder="Your Email" required />
-        <textarea name="message" rows="3" placeholder="Your Message" required />
-        <button type="submit">Send Message</button>
+        <textarea name="message" rows="4" placeholder="Your Message" required />
+        <button type="submit" className="btn-primary">Send Message</button>
       </form>
     </section>
   );

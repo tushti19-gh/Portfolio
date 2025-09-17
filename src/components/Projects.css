@@ -1,30 +1,31 @@
 .projects-section {
   padding: 60px 20px;
   text-align: center;
-  
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .projects-section h2 {
-  color: #00f2fe; /* neon heading */
+  color: #00f2fe;
   text-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
   font-size: 2rem;
   margin-bottom: 40px;
 }
 
-.projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
+/* Swiper container spacing */
+.swiper {
+  padding-bottom: 50px; /* extra space for pagination dots */
 }
 
+/* Project Card */
 .project-card {
   background: #111;
   padding: 20px;
   border-radius: 12px;
+  text-align: center;
   box-shadow: 0 4px 15px rgba(0, 242, 254, 0.2);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
 }
 
 .project-card:hover {
@@ -32,18 +33,68 @@
   box-shadow: 0 6px 20px rgba(0, 242, 254, 0.4);
 }
 
+/* Image wrapper for uniform height */
 .project-image {
   width: 100%;
+  height: 200px;
+  object-fit: cover;
   border-radius: 8px;
   margin-bottom: 15px;
 }
 
-.project-card a {
+/* Project title and description */
+.project-card h3 {
+  margin-bottom: 10px;
   color: #00f2fe;
-  text-decoration: none;
-  font-weight: 500;
 }
 
-.project-card a:hover {
-  text-decoration: underline;
+.project-card p {
+  margin-bottom: 15px;
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* View Code link (fade-in and glow effect) */
+.project-card a {
+  opacity: 0; /* hidden initially */
+  display: inline-block;
+  color: #00f2fe;
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.3s ease, text-shadow 0.3s ease;
+}
+
+.project-card:hover a {
+  opacity: 1;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
+}
+
+/* Swiper pagination */
+.swiper-pagination {
+  position: relative;  /* allows margin to work */
+  margin-top: 20px;    /* space below the slider */
+  text-align: center;
+}
+
+.swiper-pagination-bullet {
+  background: #00f2fe;
+  opacity: 0.7;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+}
+
+/* Swiper navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #00f2fe;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .project-image {
+    height: 180px;
+  }
 }

@@ -45,6 +45,12 @@
   box-shadow: 0 8px 30px rgba(0, 242, 254, 0.4);
 }
 
+.about .resume-section{
+  justify-content: center;
+  display: flex;
+  align-content: center;
+  gap: 20px;
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .about h2 {

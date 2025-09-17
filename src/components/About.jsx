@@ -30,6 +30,7 @@ function About() {
         <a href="/Resume.pdf"  className="btn">
           View Resume
         </a>
+        <a href="/resume.pdf" download className='btn-primary'>Download Resume</a>
       </section>
     </section>
   );
