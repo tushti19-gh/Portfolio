@@ -1,28 +1,27 @@
 import React from "react";
 import ProfilePic from "../assets/profilePic.png";
-import  { useState, useEffect } from "react";
+//import  { useState, useEffect } from "react";
 
 function Header() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-        console.log(window.scrollY); 
-      if (window.scrollY > 10) { // adjust threshold
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //       console.log(window.scrollY); 
+  //     if (window.scrollY > 10) { // adjust threshold
+  //       setIsScrolled(true);
+  //     } else {
+  //       setIsScrolled(false);
+  //     }
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    // Cleanup
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   // Cleanup
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
   return (
- <header className={`sticky top-0 z-50 transition-all duration-300 
-  ${isScrolled ? "bg-gray-800 py-2 shadow-lg" : "bg-gray-900 py-4"}`}>
+ <header className="header">
 
       <nav className="navbar">
         <div className="logo-container">
