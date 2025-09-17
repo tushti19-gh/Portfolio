@@ -1,46 +1,42 @@
+/* ==============================
+   Contact Section
+   ============================== */
 .contact-section {
-  padding: 60px 20px;
+  padding: 80px 20px;
   text-align: center;
   max-width: 800px;
   margin: 0 auto;
 }
 
 .contact-section h2 {
-  font-size: 2rem;
+  font-size: 3rem;
+  margin-bottom: 20px;
   color: #00f2fe;
   text-shadow: 0 0 10px rgba(0, 242, 254, 0.8);
-  margin-bottom: 15px;
 }
 
-.contact-intro {
-  color: #ccc;
-  margin-bottom: 30px;
+.contact-section p {
+  color: #bbb;
+  margin-bottom: 40px;
 }
 
+/* Contact Links */
 .contact-links {
   list-style: none;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 30px;
   margin-bottom: 40px;
-  flex-wrap: wrap;
   padding: 0;
 }
 
 .contact-links li {
   display: flex;
   align-items: center;
-  gap: 8px;
-}
-
-.contact-links a {
-  color: #00f2fe;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.contact-links a:hover {
-  text-decoration: underline;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.1rem;
 }
 
 .contact-icon {
@@ -48,7 +44,22 @@
   color: #00f2fe;
 }
 
+.contact-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.contact-links a:hover {
+  color: #00f2fe;
+  text-shadow: 0 0 8px rgba(0, 242, 254, 0.7);
+}
+
+/* Contact Form */
 .contact-form {
+  max-width: 500px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -57,33 +68,34 @@
 .contact-form input,
 .contact-form textarea {
   padding: 12px 15px;
+  border: 1px solid #333;
   border-radius: 8px;
-  border: none;
   outline: none;
   font-size: 1rem;
-  background: #111;
   color: #fff;
-  box-shadow: 0 0 5px rgba(0, 242, 254, 0.2);
-  transition: box-shadow 0.2s ease;
+  background: #1a1a1a;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  box-shadow: 0 0 10px rgba(0, 242, 254, 0.7);
+  border: 1px solid #00f2fe;
+  box-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
 }
 
-.btn-primary {
+.contact-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
   background: #00f2fe;
   color: #111;
-  font-weight: 600;
-  padding: 12px 20px;
-  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
   cursor: pointer;
-  border: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.btn-primary:hover {
+.contact-form button:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 15px rgba(0, 242, 254, 0.7);
 }

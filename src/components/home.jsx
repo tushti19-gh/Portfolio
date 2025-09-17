@@ -30,7 +30,7 @@ export default function Home() {
         </p>
 
         <div className="btn-group">
-          <a href="/resume.pdf" download className='btn-primary'>Download Resume</a>
+          <a href="/resume.pdf" download className='btn-primary1'>Download Resume</a>
           <a href="#contact" className='btn-outline'>Contact Me</a>
         </div>
       </div>
